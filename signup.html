@@ -24,7 +24,8 @@
       <a class="btn-outline" href="login.html">Login</a>
       <a class="btn-solid" href="signup.html">Sign Up</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <button type="button" onclick="signup()">Sign Up</button>
+
   </div>
 </header>
 
@@ -75,8 +76,58 @@
     <small>© <span id="year"></span> SNDP HSS Adimali. All rights reserved.</small>
   </div>
 </footer>
-<script src="scripts.js"></script>
-<script src="auth.js"></script>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "YOUR-API-KEY",
+    authDomain: "sndp-hss-adimali.firebaseapp.com",
+    projectId: "sndp-hss-adimali",
+    storageBucket: "sndp-hss-adimali.appspot.com",
+    messagingSenderId: "YOUR-ID",
+    appId: "YOUR-APP-ID"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Attach submit event to the form
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('signup-form');
+    const status = document.getElementById('signup-status');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = form.elements['name'].value;
+        const phone = form.elements['phone'].value;
+        const email = form.elements['email'].value;
+        const password = form.elements['password'].value;
+        const confirm = form.elements['confirm'].value;
+        if (password !== confirm) {
+          status.textContent = 'Passwords do not match.';
+          status.style.color = 'red';
+          return;
+        }
+        auth.createUserWithEmailAndPassword(email, password)
+          .then(userCredential => {
+            status.textContent = 'Signup successful! Redirecting...';
+            status.style.color = 'green';
+            setTimeout(() => {
+              window.location.href = 'login.html';
+            }, 1200);
+          })
+          .catch(error => {
+            status.textContent = error.message;
+            status.style.color = 'red';
+          });
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
