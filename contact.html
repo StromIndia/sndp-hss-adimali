@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — SNDP HSS Adimali</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-logo" aria-hidden="true">📚</span>
+      <span class="brand-text">SNDP HSS Adimali</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-outline" href="login.html">Login</a>
+      <a class="btn-solid" href="signup.html">Sign Up</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section-head">
+    <h1>Contact Us</h1>
+    <p>We’re here to help. Send us a message and we’ll get back soon.</p>
+  </section>
+  <form class="card form" id="contact-form">
+    <div class="grid-2">
+      <label>Name<input type="text" name="name" required></label>
+      <label>Email<input type="email" name="email" required></label>
+    </div>
+    <label>Subject<input type="text" name="subject" required></label>
+    <label>Message<textarea name="message" rows="5" required></textarea></label>
+    <div class="form-actions">
+      <button class="btn-solid" type="submit">Send</button>
+      <span class="form-status" id="contact-status" role="status" aria-live="polite"></span>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="container grid-3">
+    <div>
+      <h3>SNDP HSS Adimali</h3>
+      <p>A learner-first higher secondary school fostering curiosity, character, and community.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="list-unstyled">
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Reach Us</h4>
+      <p>SNDP HSS, Adimali, Idukki, Kerala 685561</p>
+      <p>Email: info@sndphssadimali.edu.in</p>
+      <p>Phone: +91-4864-XXXXXX</p>
+    </div>
+  </div>
+  <div class="container copyright">
+    <small>© <span id="year"></span> SNDP HSS Adimali. All rights reserved.</small>
+  </div>
+</footer>
+<script src="scripts.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>

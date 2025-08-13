@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Firebase App -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+<!-- Firebase Authentication -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+
+<script>
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNDP HSS Adimali — Home</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-logo" aria-hidden="true">📚</span>
+      <span class="brand-text">SNDP HSS Adimali</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-outline" href="login.html">Login</a>
+      <a class="btn-solid" href="signup.html">Sign Up</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Learn. Lead. Serve.</h1>
+        <p>Welcome to <strong>SNDP HSS Adimali</strong>, where we unlock potential through excellent teaching, vibrant campus life, and a caring community.</p>
+        <div class="hero-cta">
+          <a class="btn-solid" href="admissions.html">Apply Now</a>
+          <a class="btn-outline" href="about.html">Explore</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="floating-card">
+          <h3>100% Pass</h3>
+          <p>Our students excel in board exams and beyond.</p>
+        </div>
+        <div class="floating-card delay">
+          <h3>Clubs & Sports</h3>
+          <p>From science club to football, find your passion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features container">
+    <div class="section-head">
+      <h2>Why Choose SNDP HSS?</h2>
+      <p>Academic rigor, supportive mentors, and opportunities to grow.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card feature">
+        <h3>Experienced Faculty</h3>
+        <p>Qualified, caring teachers who make learning engaging.</p>
+      </article>
+      <article class="card feature">
+        <h3>Modern Labs</h3>
+        <p>Well-equipped Physics, Chemistry, and Computer labs.</p>
+      </article>
+      <article class="card feature">
+        <h3>Safe Campus</h3>
+        <p>A secure environment with excellent facilities.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="events">
+    <div class="container">
+      <div class="section-head">
+        <h2>Latest Updates</h2>
+        <p>Announcements, events, and notices.</p>
+      </div>
+      <div id="events-list" class="timeline"></div>
+    </div>
+  </section>
+
+  <section class="gallery container">
+    <div class="section-head">
+      <h2>Campus Glimpses</h2>
+      <p>Life at SNDP HSS Adimali.</p>
+    </div>
+    <div class="grid-4" id="gallery">
+      <!-- Images injected by scripts.js -->
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container grid-3">
+    <div>
+      <h3>SNDP HSS Adimali</h3>
+      <p>A learner-first higher secondary school fostering curiosity, character, and community.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="list-unstyled">
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Reach Us</h4>
+      <p>SNDP HSS, Adimali, Idukki, Kerala 685561</p>
+      <p>Email: info@sndphssadimali.edu.in</p>
+      <p>Phone: +91-4864-XXXXXX</p>
+    </div>
+  </div>
+  <div class="container copyright">
+    <small>© <span id="year"></span> SNDP HSS Adimali. All rights reserved.</small>
+  </div>
+</footer>
+<script src="scripts.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>
